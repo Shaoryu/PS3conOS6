@@ -29,11 +29,7 @@ int PS3::get_data(int* data_p)
     j = 0;
     if(readable()) {
         for(int i=0; i<8; i++) {
-            /*#if MBED_MAJOR_VERSION >= 6
-                        read(&ps3_data[i], 1);
-            //#else*/
-            ps3_data[i] = getchar();
-//#endif
+                read(&ps3_data[i], 1);
             if(ps3_data[i] == FREE[i]) {
                 j++;
             }
